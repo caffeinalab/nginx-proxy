@@ -7,3 +7,4 @@ COPY common /etc/nginx/vhost.d/common
 COPY common_location /etc/nginx/vhost.d/common_location
 
 VOLUME /etc/nginx/vhost.d
+VOLUME /usr/share/nginx/html
