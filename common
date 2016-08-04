@@ -1,0 +1,13 @@
+location = /internalAuth {
+	internal;
+	proxy_pass http://auth-server/auth;
+	proxy_set_header Request-Url $scheme://$http_host$request_uri;
+}
+
+error_page 403 =307 /internalRedirect;
+
+location /internalRedirect {
+	internal;
+	proxy_pass http://auth-server/redirect;
+	proxy_set_header Request-Url $scheme://$http_host$request_uri;
+}

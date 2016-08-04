@@ -1,0 +1,7 @@
+auth_request /internalAuth;
+auth_request_set $payload $upstream_http_auth_server_payload;
+auth_request_set $session $upstream_http_auth_server_session;
+auth_request_set $token $upstream_http_auth_server_token;
+proxy_set_header Auth-Server-Payload $payload;
+proxy_set_header Auth-Server-Session $session;
+proxy_set_header Auth-Server-Token $token;
