@@ -3,7 +3,6 @@ MAINTAINER Fabien Herfray <herfray.fabien@gmail.com>
 
 COPY nginx.tmpl /app/nginx.tmpl
 COPY cors.conf /etc/nginx/cors.conf
-COPY custom.conf /etc/nginx/custom.conf
 COPY common /etc/nginx/vhost.d/common
 COPY common_location /etc/nginx/vhost.d/common_location
 
