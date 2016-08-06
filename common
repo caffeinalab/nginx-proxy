@@ -1,6 +1,6 @@
 location = /internalAuth {
 	internal;
-	proxy_pass http://auth-endpoint/auth;
+	proxy_pass http://${AUTH_ENDPOINT}/auth;
 	proxy_set_header Request-Url $scheme://$http_host$request_uri;
 }
 
@@ -8,6 +8,6 @@ error_page 403 =307 /internalRedirect;
 
 location /internalRedirect {
 	internal;
-	proxy_pass http://auth-endpoint/redirect;
+	proxy_pass http://${AUTH_ENDPOINT}/redirect;
 	proxy_set_header Request-Url $scheme://$http_host$request_uri;
 }

@@ -1,14 +1,9 @@
 FROM jwilder/nginx-proxy:latest
 MAINTAINER Fabien Herfray <herfray.fabien@gmail.com>
 
-RUN apt-get update \
-&& apt-get install curl -y -q \
-&& apt-get clean \
-&& rm -r /var/lib/apt/lists/* \
-&& curl -sLo /usr/local/bin/ep https://github.com/kreuzwerker/envplate/releases/download/v0.0.8/ep-linux \
-&& chmod +x /usr/local/bin/ep \
-&& apt-get remove curl -y -q
+ADD https://github.com/kreuzwerker/envplate/releases/download/v0.0.8/ep-linux /usr/local/bin/ep
 
+COPY docker-entrypoint.sh /app/docker-entrypoint.sh
 COPY nginx.tmpl /app/nginx.tmpl
 COPY cors.conf /etc/nginx/cors.conf
 COPY common /etc/nginx/vhost.d/common
