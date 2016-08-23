@@ -34,7 +34,7 @@ map $http_upgrade $proxy_connection {
 # CORS maps that allows to add or not CORS headers if they are already present
 map $upstream_http_access_control_allow_origin $corsorigin {
   default '';
-  '' '*';
+  '' "$http_origin";
 }
 
 map $upstream_http_access_control_allow_credentials $corscreds {
