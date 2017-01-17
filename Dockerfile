@@ -1,4 +1,4 @@
-FROM jwilder/nginx-proxy:latest
+FROM jwilder/nginx-proxy:alpine
 MAINTAINER Fabien Herfray <herfray.fabien@gmail.com>
 
 ADD https://github.com/kreuzwerker/envplate/releases/download/v0.0.8/ep-linux /usr/local/bin/ep
